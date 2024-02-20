@@ -27,12 +27,12 @@ for(const btn of seatBtnContainer) {
            
             ticketCount += 1;
             if(ticketCount <= 4) {
-                // remove the default bg then add new one of seat
+               
                 e.target.classList.remove('bg-[#F7F8F8]');
                 e.target.classList.add('bg-[#1DD100]');
                 availableSeat.innerText = parseInt(availableSeat.innerText) - 1;
                 seatInputCount.innerText = ticketCount;
-                // create a div and 3 p tag to push the title and price
+               
                 const div = document.createElement('div');
                 div.classList.add('flex', 'justify-between');
                 const p1 = document.createElement('p');
@@ -45,13 +45,13 @@ for(const btn of seatBtnContainer) {
                 p3.innerText = 550;
                 div.appendChild(p3);
                 ticketTitlePriceListContainer.appendChild(div);
-                // set the total price and grand price
+               
                 totalPriceSpan.innerText = (550 * ticketCount);
                 grandTotalAmmountSpan.innerText = (550 * ticketCount);
-                // check the validation for next btn
+                
                 checkNextBtnValidation2();
 
-                // check for enable coupon apply btn
+               
                 if(ticketCount === 4) {
                     couponApplyBtn.removeAttribute('disabled', true);
                 }
